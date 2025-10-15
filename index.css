@@ -1,18 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;700&display=swap');
-
-/* Updated Color Palette (Interchanged Usage) */
+/* Color Palette */
 :root {
-    --orange: #f69432; /* Retained for CTAs */
-    --white1: #fdfdfd; /* Light background */
-    --white2: #fefefe; /* Card backgrounds */
-    --brown: #634335;  /* Primary text and accents (swapped from original) */
-    --blue: #364b84;   /* Backgrounds and links (promoted from accent) */
+    --orange: #f69432;
+    --white1: #fdfdfd;
+    --white2: #fefefe;
+    --brown: #634335;
+    --blue: #364b84;
 }
 
 /* General Styles */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: var(--white1);
     color: var(--brown);
     line-height: 1.6;
@@ -23,12 +21,12 @@ a {
     color: var(--blue);
 }
 
-/* Header (Background now blue for prominence) */
+/* Header */
 .header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: var(--blue);
+    background-color: var(--white2);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
     padding: 10px 0;
@@ -45,19 +43,17 @@ a {
 
 .logo-space img {
     max-width: 186px;
-    max-height: 84px;
+    max-height: 84px; /* Scaled down for header; original 1866x846 is too large */
 }
 
 .company-name {
-    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
-    font-weight: 700;
-    color: var(--white2); /* White text on blue background */
+    font-weight: bold;
+    color: var(--brown);
 }
 
 .social-links img {
     margin-left: 10px;
-    filter: brightness(0) invert(1); /* White icon on blue */
 }
 
 .cta-button {
@@ -65,13 +61,12 @@ a {
     color: var(--white2);
     padding: 10px 20px;
     border-radius: 5px;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 /* Main Content */
 .main-content {
-    margin-top: 80px;
+    margin-top: 80px; /* Account for fixed header */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -79,21 +74,12 @@ a {
 }
 
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: var(--brown); /* Brown for headings */
+    color: var(--blue);
 }
 
 .welcome-section, .description-section {
     text-align: center;
     padding: 40px 0;
-    background-color: var(--blue); /* Blue background swap */
-    color: var(--white2);
-}
-
-.welcome-section h1,
-.description-section h2 {
-    color: var(--white2); /* White headings on blue */
 }
 
 .full-image {
@@ -103,15 +89,9 @@ h1, h2, h3 {
     margin: 20px 0;
 }
 
-/* Facilities (Cards now with orange borders) */
+/* Facilities */
 .facilities-section {
     padding: 40px 0;
-    background-color: var(--white2); /* White background */
-}
-
-.facilities-section h2 {
-    color: var(--blue); /* Blue heading */
-    text-align: center;
 }
 
 .facilities-grid {
@@ -121,10 +101,10 @@ h1, h2, h3 {
 }
 
 .facility-box {
-    background-color: var(--white1);
+    background-color: var(--white2);
     padding: 20px;
     text-align: center;
-    border: 2px solid var(--orange); /* Orange border swap */
+    border: 1px solid var(--orange);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -133,20 +113,9 @@ h1, h2, h3 {
     margin-bottom: 10px;
 }
 
-.facility-box h3 {
-    color: var(--blue); /* Blue subheadings */
-}
-
-/* Flats Sections (Blue accents) */
+/* Flats Sections */
 .flats-section, .rent-section {
     padding: 40px 0;
-    background-color: var(--white1);
-}
-
-.flats-section h2,
-.rent-section h2 {
-    color: var(--brown);
-    text-align: center;
 }
 
 .flats-grid {
@@ -159,7 +128,7 @@ h1, h2, h3 {
     background-color: var(--white2);
     padding: 20px;
     text-align: center;
-    border: 1px solid var(--blue); /* Blue border */
+    border: 1px solid var(--blue);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     flex: 1;
@@ -172,31 +141,23 @@ h1, h2, h3 {
     border-radius: 5px;
 }
 
-.flat-card h3 {
-    color: var(--orange); /* Orange for flat types */
-}
-
 .price {
     font-size: 18px;
     font-weight: bold;
-    color: var(--brown); /* Brown pricing */
+    color: var(--orange);
 }
 
-/* CTA Box (Orange background retained but with brown text) */
+/* CTA Box */
 .cta-box {
     background-color: var(--orange);
-    color: var(--brown); /* Brown text on orange */
+    color: var(--white2);
     text-align: center;
     padding: 40px;
     border-radius: 10px;
     margin: 40px 0;
 }
 
-.cta-box h2 {
-    color: var(--brown);
-}
-
-/* Footer (Brown background with white text) */
+/* Footer */
 .footer {
     background-color: var(--brown);
     color: var(--white2);
@@ -212,11 +173,6 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-}
-
-.footer-text {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
 }
 
 .quick-links {
@@ -235,10 +191,6 @@ h1, h2, h3 {
     color: var(--white2);
 }
 
-.quick-links img {
-    filter: brightness(0) invert(1); /* White icon on brown */
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .flats-grid {
@@ -248,9 +200,5 @@ h1, h2, h3 {
     .header-container, .footer-container {
         flex-direction: column;
         gap: 10px;
-    }
-    
-    .welcome-section, .description-section {
-        padding: 20px;
     }
 }
