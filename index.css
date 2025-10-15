@@ -14,7 +14,7 @@ body {
     background-color: var(--white1);
     color: var(--brown);
     line-height: 1.6;
-    padding-bottom: 80px; /* Space for fixed footer */
+    /* Removed padding-bottom as footer is now movable */
 }
 
 a {
@@ -48,8 +48,8 @@ a {
 }
 
 .logo-space img {
-    max-width: 186px;
-    max-height: 84px; /* Scaled down for header; original 1866x846 is too large */
+    max-width: 250px; /* Increased size for better visibility */
+    max-height: 113px; /* Scaled proportionally */
 }
 
 .company-name {
@@ -184,17 +184,13 @@ h1, h2, h3 {
     margin: 40px 0;
 }
 
-/* Footer - Now Fixed at Bottom */
+/* Footer - Slimmer and Movable (Normal Flow) */
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    /* Removed position: fixed; now movable */
     background-color: var(--brown);
     color: var(--white2);
-    padding: 20px 0;
+    padding: 10px 0; /* Slimmer padding */
     text-align: center;
-    z-index: 999;
 }
 
 .footer-container {
@@ -246,9 +242,7 @@ h1, h2, h3 {
 
 /* Responsive */
 @media (max-width: 768px) {
-    body {
-        padding-bottom: 100px; /* Increased for taller mobile footer */
-    }
+    /* Removed body padding-bottom as footer is movable */
     
     .header {
         padding: 5px 0; /* Reduce padding for more space */
@@ -259,12 +253,12 @@ h1, h2, h3 {
         justify-content: space-between;
         align-items: center;
         padding: 0 10px; /* Tighter padding */
-        gap: 5px; /* Minimal gap */
+        gap: 2px; /* Minimal gap overall */
     }
     
     .logo-space img {
-        width: 50px; /* Tiny logo on mobile for visibility without crowding */
-        height: 23px;
+        width: 80px; /* Increased size on mobile */
+        height: 36px;
         margin-right: 5px;
     }
     
@@ -276,7 +270,7 @@ h1, h2, h3 {
     
     .social-links {
         order: 3; /* Move Instagram after CTA for proximity to right */
-        margin: 0 0 0 5px;
+        margin-left: 2px; /* Nearer to CTA */
     }
     
     .social-links img {
@@ -290,7 +284,7 @@ h1, h2, h3 {
         padding: 6px 10px; /* Even smaller button */
         font-size: 12px;
         flex-shrink: 0;
-        margin-right: 5px;
+        margin-right: 2px; /* Nearer to Instagram */
     }
     
     .main-content {
@@ -318,14 +312,14 @@ h1, h2, h3 {
     }
     
     .footer {
-        padding: 10px 0; /* Thinner on mobile */
+        padding: 5px 0; /* Even slimmer on mobile */
     }
     
     .footer-container {
         flex-direction: row; /* Side by side on mobile */
         justify-content: space-around; /* Evenly distribute elements */
         align-items: center;
-        gap: 10px; /* Small gap between elements */
+        gap: 5px; /* Reduced gap for slimmer feel */
         flex-wrap: wrap; /* Wrap if too narrow */
     }
     
@@ -341,7 +335,7 @@ h1, h2, h3 {
     
     .quick-links {
         display: flex; /* Ensure inline on mobile */
-        gap: 10px; /* Reduced gap */
+        gap: 8px; /* Reduced gap */
         justify-content: flex-end; /* Push to right if space allows */
     }
     
