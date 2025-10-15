@@ -14,6 +14,7 @@ body {
     background-color: var(--white1);
     color: var(--brown);
     line-height: 1.6;
+    padding-bottom: 80px; /* Space for fixed footer */
 }
 
 a {
@@ -55,6 +56,7 @@ a {
     font-size: 24px;
     font-weight: bold;
     color: var(--brown);
+    margin: 0 10px; /* Space between logo and text */
 }
 
 .social-links {
@@ -182,12 +184,17 @@ h1, h2, h3 {
     margin: 40px 0;
 }
 
-/* Footer */
+/* Footer - Now Fixed at Bottom */
 .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: var(--brown);
     color: var(--white2);
     padding: 20px 0;
     text-align: center;
+    z-index: 999;
 }
 
 .footer-container {
@@ -198,6 +205,21 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 50px; /* Small footer logo */
+    height: 25px;
+    margin-right: 10px;
+}
+
+.footer-text {
+    font-weight: bold;
 }
 
 .quick-links {
@@ -216,8 +238,18 @@ h1, h2, h3 {
     color: var(--white2);
 }
 
+.quick-links img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* White on brown */
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    body {
+        padding-bottom: 100px; /* Increased for taller mobile footer */
+    }
+    
     .header {
         padding: 5px 0; /* Reduce padding for more space */
     }
@@ -227,33 +259,38 @@ h1, h2, h3 {
         justify-content: space-between;
         align-items: center;
         padding: 0 10px; /* Tighter padding */
-        gap: 10px; /* Add small gap if needed */
+        gap: 5px; /* Minimal gap */
     }
     
-    .logo-space {
-        display: none; /* Hide image logo in mobile to prioritize text */
+    .logo-space img {
+        width: 50px; /* Tiny logo on mobile for visibility without crowding */
+        height: 23px;
+        margin-right: 5px;
     }
     
     .company-name {
-        font-size: 18px; /* Smaller font for logo text */
-        flex-shrink: 0; /* Prevent shrinking */
-        margin: 0;
+        font-size: 16px; /* Slightly smaller for fit */
+        flex-shrink: 0;
+        margin: 0 5px;
     }
     
     .social-links {
-        margin: 0 5px 0 0; /* Adjust margins for tightness */
+        order: 3; /* Move Instagram after CTA for proximity to right */
+        margin: 0 0 0 5px;
     }
     
     .social-links img {
-        width: 20px;
-        height: 20px;
-        margin-left: 0; /* Remove left margin for compactness */
+        width: 18px;
+        height: 18px;
+        margin-left: 0;
     }
     
     .cta-button {
-        padding: 8px 12px; /* Smaller button */
-        font-size: 14px; /* Smaller text */
-        flex-shrink: 0; /* Prevent shrinking */
+        order: 2; /* CTA before Instagram in flex order */
+        padding: 6px 10px; /* Even smaller button */
+        font-size: 12px;
+        flex-shrink: 0;
+        margin-right: 5px;
     }
     
     .main-content {
@@ -280,15 +317,32 @@ h1, h2, h3 {
         flex-direction: column; /* Stack flats vertically */
     }
     
+    .footer {
+        padding: 10px 0; /* Thinner on mobile */
+    }
+    
     .footer-container {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        flex-direction: row; /* Side by side on mobile */
+        justify-content: space-around; /* Evenly distribute elements */
+        align-items: center;
+        gap: 10px; /* Small gap between elements */
+        flex-wrap: wrap; /* Wrap if too narrow */
+    }
+    
+    .footer-logo img {
+        width: 40px;
+        height: 20px;
+    }
+    
+    .footer-text {
+        font-size: 14px; /* Smaller text for fit */
+        white-space: nowrap;
     }
     
     .quick-links {
-        justify-content: center; /* Center links in footer */
-        flex-wrap: wrap;
+        display: flex; /* Ensure inline on mobile */
+        gap: 10px; /* Reduced gap */
+        justify-content: flex-end; /* Push to right if space allows */
     }
     
     .description-section {
