@@ -41,6 +41,11 @@ a {
     padding: 0 20px;
 }
 
+.logo-space {
+    display: flex;
+    align-items: center;
+}
+
 .logo-space img {
     max-width: 186px;
     max-height: 84px; /* Scaled down for header; original 1866x846 is too large */
@@ -50,6 +55,11 @@ a {
     font-size: 24px;
     font-weight: bold;
     color: var(--brown);
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
 }
 
 .social-links img {
@@ -62,6 +72,7 @@ a {
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
+    white-space: nowrap; /* Prevent text wrap */
 }
 
 /* Main Content */
@@ -193,12 +204,73 @@ h1, h2, h3 {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .flats-grid {
-        flex-direction: column;
+    .header {
+        padding: 5px 0; /* Reduce padding for more space */
     }
     
-    .header-container, .footer-container {
+    .header-container {
+        flex-direction: row; /* Keep horizontal for side-by-side */
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px; /* Tighter padding */
+        gap: 10px; /* Add small gap if needed */
+    }
+    
+    .logo-space {
+        display: none; /* Hide image logo in mobile to prioritize text */
+    }
+    
+    .company-name {
+        font-size: 18px; /* Smaller font for logo text */
+        flex-shrink: 0; /* Prevent shrinking */
+        margin: 0;
+    }
+    
+    .social-links {
+        margin: 0 5px 0 0; /* Adjust margins for tightness */
+    }
+    
+    .social-links img {
+        width: 20px;
+        height: 20px;
+        margin-left: 0; /* Remove left margin for compactness */
+    }
+    
+    .cta-button {
+        padding: 8px 12px; /* Smaller button */
+        font-size: 14px; /* Smaller text */
+        flex-shrink: 0; /* Prevent shrinking */
+    }
+    
+    .flats-grid {
+        flex-direction: column; /* Stack flats vertically */
+    }
+    
+    .footer-container {
         flex-direction: column;
         gap: 10px;
+        text-align: center;
+    }
+    
+    .quick-links {
+        justify-content: center; /* Center links in footer */
+        flex-wrap: wrap;
+    }
+    
+    .welcome-section, .description-section {
+        padding: 20px;
+    }
+    
+    .facilities-grid {
+        grid-template-columns: 1fr; /* Single column for facilities */
+        gap: 15px;
+    }
+    
+    .facility-box {
+        padding: 15px; /* Smaller padding in boxes */
+    }
+    
+    .main-content {
+        padding: 10px; /* Tighter content padding */
     }
 }
