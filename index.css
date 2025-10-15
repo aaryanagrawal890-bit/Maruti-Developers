@@ -77,7 +77,7 @@ a {
 
 /* Main Content */
 .main-content {
-    margin-top: 80px; /* Account for fixed header */
+    margin-top: 100px; /* Increased for better clearance under fixed header */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -88,7 +88,21 @@ h1, h2, h3 {
     color: var(--blue);
 }
 
-.welcome-section, .description-section {
+.welcome-section {
+    text-align: center;
+    padding: 50px 0; /* Increased padding for prominence */
+    background-color: var(--white2); /* Light background for contrast */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.welcome-section h1 {
+    font-size: 36px; /* Larger font for visibility */
+    margin-bottom: 10px;
+    line-height: 1.2; /* Tighter line height for better fit */
+}
+
+.description-section {
     text-align: center;
     padding: 40px 0;
 }
@@ -242,6 +256,26 @@ h1, h2, h3 {
         flex-shrink: 0; /* Prevent shrinking */
     }
     
+    .main-content {
+        margin-top: 70px; /* Adjusted for smaller header padding on mobile */
+        padding: 10px; /* Tighter content padding */
+    }
+    
+    .welcome-section {
+        padding: 30px 10px; /* Reduced but sufficient for visibility */
+        margin: 0 0 20px 0;
+    }
+    
+    .welcome-section h1 {
+        font-size: 28px; /* Scaled down but prominent on mobile */
+        word-wrap: break-word; /* Ensure long words wrap if needed */
+    }
+    
+    .welcome-section p {
+        font-size: 16px; /* Ensure paragraphs are readable */
+        margin: 10px 0;
+    }
+    
     .flats-grid {
         flex-direction: column; /* Stack flats vertically */
     }
@@ -257,7 +291,7 @@ h1, h2, h3 {
         flex-wrap: wrap;
     }
     
-    .welcome-section, .description-section {
+    .description-section {
         padding: 20px;
     }
     
@@ -268,9 +302,5 @@ h1, h2, h3 {
     
     .facility-box {
         padding: 15px; /* Smaller padding in boxes */
-    }
-    
-    .main-content {
-        padding: 10px; /* Tighter content padding */
     }
 }
